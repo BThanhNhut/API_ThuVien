@@ -1,5 +1,7 @@
 package com.example.API_ThuVien.model;
 
+import java.sql.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,18 +12,22 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Builder
 @Entity
-@Table(name = "docgia")
-public class Docgia {
+@Table(name = "tailieu")
+public class Tailieu {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_dg;
-	private Integer id_sv;
-	private String email;
-	private int password;
+	private Integer id_tailieu;
+	private int id_nxb;
+	private int id_loai;
+	private String tentailieu;
+	private Integer soluong;
+	private int namsanxuat;
+	private String tacgia;
+	private String hinh;
+	private String mota;
 }

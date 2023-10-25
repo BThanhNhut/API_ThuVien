@@ -10,18 +10,17 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Builder
 @Entity
-@Table(name = "docgia")
-public class Docgia {
+@Table(name = "nhaxuatban")
+public class Nhaxuatban {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_dg;
-	private Integer id_sv;
-	private String email;
-	private int password;
+	private Integer id_nxb;
+	private String tennxb;
+	private String diachi;
+	private String sodienthoai;
 }
