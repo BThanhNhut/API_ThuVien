@@ -10,9 +10,4 @@ import jakarta.persistence.Id;
 import jakarta.transaction.Transactional;
 
 public interface ViPhamHuSachRepository extends JpaRepository<Viphamhusach, Integer> {
-    // Xóa dữ liệu bằng cả hai khóa chính
-    @Modifying
-    @Transactional
-    @Query("DELETE FROM Viphamhusach v WHERE v.id_tailieu = :idTailieu AND v.id_muon = :idMuon")
-    void deleteByTailieuAndMuon(int idTailieu, int idMuon);
 }
