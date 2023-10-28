@@ -23,5 +23,5 @@ public class Docgia {
 	private int id_dg;
 	private Integer id_sv;
 	private String email;
-	private int password;
+	private String password;
 }
