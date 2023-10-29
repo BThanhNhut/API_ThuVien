@@ -22,7 +22,6 @@ public class SinhVien {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id_sv;
-	private Integer id_dg;
 	private String tensv;
 	private String mssv;
 	private int gioitinh;
