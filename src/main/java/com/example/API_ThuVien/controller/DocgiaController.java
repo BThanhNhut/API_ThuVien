@@ -1,6 +1,7 @@
 package com.example.API_ThuVien.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.API_ThuVien.model.Docgia;
@@ -65,4 +66,21 @@ public class DocgiaController {
 		}
 		return Optional.empty();
     }
+	@PostMapping("add/{username}/{password}")
+    public Optional<Docgia> checkUserName (@RequestBody MultiValueMap<String, String> formData){
+		List<Docgia> docgialist = docgiaRepository.findAll();
+		String username, password;
+		username = formData.getFirst("username");
+		password = formData.getFirst("password");
+		for(Docgia dg : docgialist)
+		{
+			if(dg.getEmail().trim().equals(username.trim()) && dg.getPassword().trim().equals(password.trim())) {
+				Optional<Docgia> optionalDocgia =  Optional.of(dg);
+				return optionalDocgia;
+			}
+		}
+		return Optional.empty();
+    }
+	
+	
 }
