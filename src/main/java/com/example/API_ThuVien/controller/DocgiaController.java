@@ -53,7 +53,7 @@ public class DocgiaController {
 	}
 
 	//
-	@GetMapping("/{username}/{password}")
+	@PostMapping("/{username}/{password}")
     public Optional<Docgia> checkUserName (@PathVariable String username,@PathVariable String password){
 		List<Docgia> docgialist = docgiaRepository.findAll();
 		for(Docgia dg : docgialist)
