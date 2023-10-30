@@ -24,6 +24,7 @@ public class Muontra {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id_muon;
 	private int id_dg;
+	private int id_nv;
 	private Date ngaymuon;
 	private int tintrangmuon;
 }

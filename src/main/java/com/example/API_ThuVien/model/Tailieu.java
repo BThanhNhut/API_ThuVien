@@ -30,4 +30,7 @@ public class Tailieu {
 	private String tacgia;
 	private String hinh;
 	private String mota;
+	private String ngonngu;
+	private int sotrang;
+	
 }
