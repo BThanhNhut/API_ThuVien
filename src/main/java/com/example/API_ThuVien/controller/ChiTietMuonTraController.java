@@ -3,6 +3,7 @@ package com.example.API_ThuVien.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.example.API_ThuVien.model.Chitietmuontra;
+import com.example.API_ThuVien.model.ChitietmuontraDTO;
 import com.example.API_ThuVien.repository.ChiTietMuonTraRepository;
 
 import java.util.List;
@@ -49,5 +50,11 @@ public class ChiTietMuonTraController {
             // Xử lý khi chi tiết mượn trả không tồn tại
             throw new RuntimeException("Chi tiết mượn trả không tồn tại với ID " + id);
         }
+    }
+    //
+    @GetMapping("/info")
+    public List<ChitietmuontraDTO> loadChiTietMuonTra ()
+    {
+    	return chitietmuontraRepository.getChitietmuontraInfo();
     }
 }
