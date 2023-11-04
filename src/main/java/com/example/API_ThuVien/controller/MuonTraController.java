@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.API_ThuVien.model.Muontra;
+import com.example.API_ThuVien.model.MuontraDTO;
 import com.example.API_ThuVien.repository.MuonTraRepository;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -48,6 +50,28 @@ public class MuonTraController {
             return muontraRepository.save(muontra);
         } else {
             // Xử lý khi phiếu mượn không tồn tại
+            throw new RuntimeException("Phiếu mượn không tồn tại với ID " + id);
+        }
+    }
+    //
+    @GetMapping("/info")
+    public List<MuontraDTO> getMuontraInfo() {
+        return muontraRepository.getMuontraInfo();
+    }
+    
+    @GetMapping("/dg")
+    public List<Object[]> getMuontraIa() {
+        return muontraRepository.getMuontraAndDocgia();
+    }
+    @PutMapping("/{id}/tintrangmuon")
+    public Muontra updateTintrangmuon(@PathVariable Integer id, @RequestParam("tintrangmuon") int tintrangmuon) {
+        Optional<Muontra> optionalMuontra = muontraRepository.findById(id);
+
+        if (optionalMuontra.isPresent()) {
+            Muontra muontra = optionalMuontra.get();
+            muontra.setTintrangmuon(tintrangmuon);
+            return muontraRepository.save(muontra);
+        } else {
             throw new RuntimeException("Phiếu mượn không tồn tại với ID " + id);
         }
     }
