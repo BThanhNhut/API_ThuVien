@@ -17,17 +17,15 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 @Entity
-@Table(name = "sinhvien")
-public class SinhVien {
+@Table(name = "nhanvien")
+public class Nhanvien {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_sv;
-	private String tensv;
-	private String mssv;
+	private Integer id_nv;
+	private String ten_nv;
 	private int gioitinh;
 	private Date ngaysinh;
-	private int nambd;
-	private int namkt;
-	private String avatar;
-	private String hinhnen;
+	private int tinhtrang;
+	private String hinh;
+	private String diachi;
 }
