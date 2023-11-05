@@ -61,4 +61,17 @@ public class ChiTietMuonTraController {
     public List<ChitietmuontraDTO> loadChiTietMuonTra(@PathVariable int id) {
         return chitietmuontraRepository.getChitietmuontraInfoByMuonId(id);
     }
+    
+    @PutMapping("/chitietmuontra/{id}/tinhtrangtra")
+    public Chitietmuontra updateTinhtrangtra(@PathVariable Integer id, @RequestParam("tinhtrangtra") int tinhtrangtra) {
+        Optional<Chitietmuontra> optionalChitietmuontra = chitietmuontraRepository.findById(id);
+
+        if (optionalChitietmuontra.isPresent()) {
+            Chitietmuontra chitietmuontra = optionalChitietmuontra.get();
+            chitietmuontra.setTinhtrangtra(tinhtrangtra);
+            return chitietmuontraRepository.save(chitietmuontra);
+        } else {
+            throw new RuntimeException("Chitietmuontra không tồn tại với ID " + id);
+        }
+    }
 }

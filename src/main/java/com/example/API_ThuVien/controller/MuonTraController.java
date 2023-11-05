@@ -68,6 +68,7 @@ public class MuonTraController {
     public List<Object[]> getMuontraIa() {
         return muontraRepository.getMuontraAndDocgia();
     }
+    
     @PutMapping("/{id}/tinhtrangmuon")
     public Muontra updateTintrangmuon(@PathVariable Integer id, @RequestParam("tinhtrangmuon") int tinhtrangmuon) {
         Optional<Muontra> optionalMuontra = muontraRepository.findById(id);
@@ -80,4 +81,5 @@ public class MuonTraController {
             throw new RuntimeException("Phiếu mượn không tồn tại với ID " + id);
         }
     }
+    
 }
