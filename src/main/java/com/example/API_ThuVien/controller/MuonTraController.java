@@ -61,7 +61,7 @@ public class MuonTraController {
     
     @GetMapping("/info2")
     public List<MuontraDTO> getMuontraInfo2() {
-        return muontraRepository.getMuontraInfo();
+        return muontraRepository.getMuontraInfo2();
     }
     
     @GetMapping("/dg")
