@@ -23,7 +23,7 @@ public interface MuonTraRepository extends JpaRepository<Muontra, Integer>{
             "FROM Muontra m " +
             "JOIN Nhanvien n ON m.id_nv = n.id_nv " +
             "JOIN Docgia d ON m.id_dg = d.id_dg " +
-            "WHERE m.tinhtrangmuon = 0")
+            "WHERE m.tinhtrangmuon = 1 OR m.tinhtrangmuon = 2")
     List<MuontraDTO> getMuontraInfo2();
     
 	
