@@ -69,7 +69,7 @@ public class MuonTraController {
 
         if (optionalMuontra.isPresent()) {
             Muontra muontra = optionalMuontra.get();
-            muontra.setTintrangmuon(tintrangmuon);
+            muontra.setTinhtrangmuon(tintrangmuon);
             return muontraRepository.save(muontra);
         } else {
             throw new RuntimeException("Phiếu mượn không tồn tại với ID " + id);

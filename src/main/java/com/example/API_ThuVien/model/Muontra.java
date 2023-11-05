@@ -26,5 +26,5 @@ public class Muontra {
 	private int id_dg;
 	private int id_nv;
 	private Date ngaymuon;
-	private int tintrangmuon;
+	private int tinhtrangmuon;
 }
