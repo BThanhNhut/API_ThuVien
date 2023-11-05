@@ -57,4 +57,8 @@ public class ChiTietMuonTraController {
     {
     	return chitietmuontraRepository.getChitietmuontraInfo();
     }
+    @GetMapping("/info/{id}")
+    public List<ChitietmuontraDTO> loadChiTietMuonTra(@PathVariable int id) {
+        return chitietmuontraRepository.getChitietmuontraInfoByMuonId(id);
+    }
 }
