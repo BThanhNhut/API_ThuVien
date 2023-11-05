@@ -16,5 +16,5 @@ public class MuontraDTO {
     private Date ngaymuon;
     private int tinhtrangmuon;
     private String ten_nv;
-    private String email;   
+    private String email;
 }

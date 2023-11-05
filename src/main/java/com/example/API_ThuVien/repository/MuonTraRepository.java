@@ -19,6 +19,7 @@ public interface MuonTraRepository extends JpaRepository<Muontra, Integer>{
             "JOIN Docgia d ON m.id_dg = d.id_dg " +
             "WHERE m.tinhtrangmuon = 0")
     List<MuontraDTO> getMuontraInfo();
+    
 	
     
 }
