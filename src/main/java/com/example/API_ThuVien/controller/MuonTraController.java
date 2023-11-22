@@ -72,7 +72,6 @@ public class MuonTraController {
     @PutMapping("/{id}/tinhtrangmuon")
     public Muontra updateTintrangmuon(@PathVariable Integer id, @RequestParam("tinhtrangmuon") int tinhtrangmuon) {
         Optional<Muontra> optionalMuontra = muontraRepository.findById(id);
-
         if (optionalMuontra.isPresent()) {
             Muontra muontra = optionalMuontra.get();
             muontra.setTinhtrangmuon(tinhtrangmuon);

@@ -49,10 +49,10 @@ public class ChiTietMuonTraController {
         return chitietmuontraRepository.getChitietmuontraInfoByMuonId(id);
     }
     
-    @PutMapping("/chitietmuontra/{id}/tinhtrangtra")
+    @PutMapping("/{id}/tinhtrangtra")
     public Chitietmuontra updateTinhtrangtra(@PathVariable Integer id, @RequestParam("tinhtrangtra") int tinhtrangtra) {
+    	System.out.println("id la" + id +" "+ tinhtrangtra);
         Optional<Chitietmuontra> optionalChitietmuontra = chitietmuontraRepository.findById(id);
-        
         if (optionalChitietmuontra.isPresent()) {
             Chitietmuontra chitietmuontra = optionalChitietmuontra.get();
             chitietmuontra.setTinhtrangtra(tinhtrangtra);
