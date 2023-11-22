@@ -39,19 +39,6 @@ public class ChiTietMuonTraController {
     public void deleteChitietmuontra(@PathVariable Integer id) {
         chitietmuontraRepository.deleteById(id);
     }
-
-    // Cập nhật thông tin chi tiết mượn trả
-    @PutMapping("/{id}")
-    public Chitietmuontra updateChitietmuontra(@PathVariable Integer id, @RequestBody Chitietmuontra chitietmuontra) {
-        if (chitietmuontraRepository.existsById(id)) {
-            chitietmuontra.setId_ctmuon(id);
-            return chitietmuontraRepository.save(chitietmuontra);
-        } else {
-            // Xử lý khi chi tiết mượn trả không tồn tại
-            throw new RuntimeException("Chi tiết mượn trả không tồn tại với ID " + id);
-        }
-    }
-    //
     @GetMapping("/info")
     public List<ChitietmuontraDTO> loadChiTietMuonTra ()
     {
@@ -65,7 +52,7 @@ public class ChiTietMuonTraController {
     @PutMapping("/chitietmuontra/{id}/tinhtrangtra")
     public Chitietmuontra updateTinhtrangtra(@PathVariable Integer id, @RequestParam("tinhtrangtra") int tinhtrangtra) {
         Optional<Chitietmuontra> optionalChitietmuontra = chitietmuontraRepository.findById(id);
-
+        
         if (optionalChitietmuontra.isPresent()) {
             Chitietmuontra chitietmuontra = optionalChitietmuontra.get();
             chitietmuontra.setTinhtrangtra(tinhtrangtra);
